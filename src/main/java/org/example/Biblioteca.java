@@ -15,7 +15,6 @@ public class Biblioteca {
 		this.usuario = usuario;
 		this.libros = libros;
 	}
-
 	public void agregarLibro(Libro libro) {
 		libros.add(libro);
 	}
