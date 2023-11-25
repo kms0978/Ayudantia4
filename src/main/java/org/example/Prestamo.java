@@ -1,78 +1,50 @@
+package org.example;
 import java.util.*;
 
 public class Prestamo {
 
-	private String libro;
+	Libro libro;
+	Bibliotecario biliotecario;
 	private String fechaInicio;
 	private String fechaTermino;
-	private Usuario usuario;
-	private Collection<Bibliotecario> bibliotecario;
+	Usuario usuario;
 
-	public Prestamo() {
-		// TODO - implement Prestamo.Prestamo
-		throw new UnsupportedOperationException();
-	}
-
-	public String getLibro() {
-		return this.libro;
-	}
-
-	/**
-	 * 
-	 * @param libro
-	 */
-	public void setLibro(String libro) {
+	public Prestamo(Libro libro, Usuario usuario, Bibliotecario biliotecario, String fechaInicio, String fechaTermino) {
 		this.libro = libro;
+		this.biliotecario = biliotecario;
+		this.fechaInicio = fechaInicio;
+		this.fechaTermino = fechaTermino;
+		this.usuario = usuario;
 	}
 
 	public String getFechaInicio() {
 		return this.fechaInicio;
 	}
-
-	/**
-	 * 
-	 * @param fechaInicio
-	 */
 	public void setFechaInicio(String fechaInicio) {
 		this.fechaInicio = fechaInicio;
 	}
-
 	public String getFechaTermino() {
 		return this.fechaTermino;
 	}
-
-	/**
-	 * 
-	 * @param fechaTermino
-	 */
 	public void setFechaTermino(String fechaTermino) {
 		this.fechaTermino = fechaTermino;
 	}
-
-	public Bibliotecario getBibliotecario() {
-		// TODO - implement Prestamo.getBibliotecario
-		throw new UnsupportedOperationException();
+	public Libro getLibro() {
+		return libro;
 	}
-
-	/**
-	 * 
-	 * @param bibliotecario
-	 */
-	public void setBibliotecario(Bibliotecario bibliotecario) {
-		// TODO - implement Prestamo.setBibliotecario
-		throw new UnsupportedOperationException();
+	public void setLibro(Libro libro) {
+		this.libro = libro;
 	}
-
+	public Bibliotecario getBiliotecario() {
+		return biliotecario;
+	}
+	public void setBiliotecario(Bibliotecario biliotecario) {
+		this.biliotecario = biliotecario;
+	}
 	public Usuario getUsuario() {
-		return this.usuario;
+		return usuario;
 	}
-
-	/**
-	 * 
-	 * @param usuario
-	 */
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-
 }

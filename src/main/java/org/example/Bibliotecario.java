@@ -1,3 +1,4 @@
+package org.example;
 public class Bibliotecario {
 
 	private String nombre;
@@ -5,55 +6,33 @@ public class Bibliotecario {
 	private String direccion;
 	private String id;
 
-	public Bibliotecario() {
-		// TODO - implement Bibliotecario.Bibliotecario
-		throw new UnsupportedOperationException();
+	public Bibliotecario(String nombre, String rut, String direccion, String id) {
+		this.nombre = nombre;
+		this.rut = rut;
+		this.direccion = direccion;
+		this.id = id;
 	}
-
 	public String getNombre() {
-		return this.nombre;
+		return nombre;
 	}
-
-	/**
-	 * 
-	 * @param nombre
-	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
 	public String getRut() {
-		return this.rut;
+		return rut;
 	}
-
-	/**
-	 * 
-	 * @param rut
-	 */
 	public void setRut(String rut) {
 		this.rut = rut;
 	}
-
 	public String getDireccion() {
-		return this.direccion;
+		return direccion;
 	}
-
-	/**
-	 * 
-	 * @param direccion
-	 */
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
-
 	public String getId() {
-		return this.id;
+		return id;
 	}
-
-	/**
-	 * 
-	 * @param id
-	 */
 	public void setId(String id) {
 		this.id = id;
 	}

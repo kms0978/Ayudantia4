@@ -1,69 +1,53 @@
+package org.example;
 import java.util.*;
+import java.util.List;
+import java.util.Scanner;
 
 public class Biblioteca {
 
-	Collection<Prestamo> libro;
-	private List<Prestamo> prestamos;
+	Bibliotecario bibliotecario;
+	Usuario usuario;
+	List<Libro> libros;
+	List<Prestamo> prestamos;
 
-	/**
-	 * 
-	 * @param libro
-	 */
-	public void agregarLibro(String libro) {
-		// TODO - implement Biblioteca.agregarLibro
-		throw new UnsupportedOperationException();
+	public Biblioteca(Bibliotecario bibliotecario, Usuario usuario, List<Libro> libros) {
+		this.bibliotecario = bibliotecario;
+		this.usuario = usuario;
+		this.libros = libros;
 	}
 
-	/**
-	 * 
-	 * @param entrada
-	 */
-	public libro buscarLibro(String entrada) {
-		// TODO - implement Biblioteca.buscarLibro
-		throw new UnsupportedOperationException();
+	public void agregarLibro(Libro libro) {
+		libros.add(libro);
 	}
-
-	/**
-	 * 
-	 * @param autor
-	 */
+	public Libro buscarLibro(String titulo) {
+		for (Libro libro : libros) {
+			if (libro.getTitulo().equals(titulo)) {
+				return libro;
+			}
+		}
+		return null;
+	}
 	public List<Libro> obtenerLibroPorAutor(String autor) {
-		// TODO - implement Biblioteca.obtenerLibroPorAutor
-		throw new UnsupportedOperationException();
+		List<Libro> librosPorAutor = new ArrayList<>();
+		for (Libro libro : libros) {
+			if (libro.getAutor().equals(autor)) {
+				librosPorAutor.add(libro);
+			}
+		}
+		return librosPorAutor;
 	}
+	public void generarPrestamo(Libro libro, Usuario usuario, Bibliotecario bibliotecario) {
 
-	/**
-	 * 
-	 * @param bibliotecario
-	 * @param usuario
-	 * @param libro
-	 * @param fechaInicio
-	 * @param fechaTermino
-	 */
-	public void generarPrestamo(Bibliotecario bibliotecario, Usuario usuario, Prestamo libro, Prestamo fechaInicio, Prestamo fechaTermino) {
-		// TODO - implement Biblioteca.generarPrestamo
-		throw new UnsupportedOperationException();
+		if (libroExiste(libro.getTitulo())) {
+
+			Prestamo prestamo = new Prestamo(libro,usuario,bibliotecario,"","");
+			prestamos.add(prestamo);
+		} else {
+			System.out.println("El libro no existe en la biblioteca.");
+		}
 	}
-
-	public List<Prestamo> getPrestamos() {
-		return this.prestamos;
-	}
-
-	/**
-	 * 
-	 * @param prestamos
-	 */
-	public void setPrestamos(List<Prestamo> prestamos) {
-		this.prestamos = prestamos;
-	}
-
-	/**
-	 * 
-	 * @param libro
-	 */
-	private boolean libroExiste(Libro libro) {
-		// TODO - implement Biblioteca.libroExiste
-		throw new UnsupportedOperationException();
+	private boolean libroExiste(String titulo) {
+		return buscarLibro(titulo) != null;
 	}
 
 }
